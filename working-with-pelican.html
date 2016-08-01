@@ -93,25 +93,32 @@ always hit on <a href="http://pelican-cn.readthedocs.io">here</a>. For now, Let 
 <li>
 <p><strong>Adding Content</strong>: Since we have something working now, we will now focus on making content for our blog site. All
 the content related to the page is written in either in <code>.md</code> or <code>.rst</code> format under content directory of your project.
-So, for yo a blog on 'testing' we will make a testing.md file in content directory. If you don't understand what are .md
-files, you must google about it. It is markdown language, that you can write your content in form of. After writing the
+So, for a blog on <code>testing</code> we will make a <code>testing.md</code> file in <code>content</code> directory. If you do not understand what are <code>.md</code>
+files, you must google about it. It is a markdown language, that you can write your content in form of. After writing the
 testing.md file run <code>make html</code> and <code>make serve</code> commands in terminal to update the html files and host those updated
-files on your local server.</p>
+files on your local server. I will suggest writing the content in <code>.md</code> file than <code>.rst</code> file. <code>.md</code> files are pretty
+easier to create.</p>
 </li>
 <li>
 <p><strong>Writing <a href="harshul1610.github.io/pages/about-me.html#about-me">about me</a> page</strong>:
 For this at first put <code>DISPLAY_PAGES_ON_MENU=True</code> in <code>pelicanconf.py</code> file. This is the file where you will get all settings
 related to website being configured. when we run make html it is this file variables that are picked up by system. Do not
 be in hurry to view the about me page in web site, because we still have not created it. we have just enabled the settings.
-To create 'aboutme.html' using <code>make html</code> you have to write your aboutme.md or aboutme.rst file and put it under pages directory
+To create 'aboutme.html' using <code>make html</code> you have to write your aboutme.md or <code>aboutme.rst</code> file and put it under pages directory
 in content directory. now run <code>make html</code> and <code>make serve</code> and view the updated page.</p>
 </li>
 <li>
-<p><strong>Social Buttons</strong>: You can definitely add them just by putting <code>SOCIAL = (('facebook', 'https://www.facebook.com/harshul.jain.7'),)</code>
+<p><strong>Social Buttons</strong>: You can definitely add them just by putting <code>SOCIAL = (('facebook', url ),)</code>
  in <code>pelicanconf.py</code>. For more social configurations, you have to check about that theme. Best way to get the info of that
  theme is github. Some themes don't have social media handling in them. But Flex does and that is why it is amazing.</p>
 </li>
+<li>
+<p><strong>Adding syntax highlighting</strong>: For implementing the syntax highlighting in your blog, you just have to write your code
+snippet between two ``. Remember default pygment used is github, you can always change that. It depends
+on the theme you are using.</p>
+</li>
 </ol>
+<p>I hope this gives you the quick start good enough to create your own blog and host it via github pages.</p>
   </div>
   <div class="tag-cloud">
     <p>

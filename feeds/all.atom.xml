@@ -21,22 +21,29 @@ always hit on &lt;a href="http://pelican-cn.readthedocs.io"&gt;here&lt;/a&gt;. F
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Adding Content&lt;/strong&gt;: Since we have something working now, we will now focus on making content for our blog site. All
 the content related to the page is written in either in &lt;code&gt;.md&lt;/code&gt; or &lt;code&gt;.rst&lt;/code&gt; format under content directory of your project.
-So, for yo a blog on 'testing' we will make a testing.md file in content directory. If you don't understand what are .md
-files, you must google about it. It is markdown language, that you can write your content in form of. After writing the
+So, for a blog on &lt;code&gt;testing&lt;/code&gt; we will make a &lt;code&gt;testing.md&lt;/code&gt; file in &lt;code&gt;content&lt;/code&gt; directory. If you do not understand what are &lt;code&gt;.md&lt;/code&gt;
+files, you must google about it. It is a markdown language, that you can write your content in form of. After writing the
 testing.md file run &lt;code&gt;make html&lt;/code&gt; and &lt;code&gt;make serve&lt;/code&gt; commands in terminal to update the html files and host those updated
-files on your local server.&lt;/p&gt;
+files on your local server. I will suggest writing the content in &lt;code&gt;.md&lt;/code&gt; file than &lt;code&gt;.rst&lt;/code&gt; file. &lt;code&gt;.md&lt;/code&gt; files are pretty
+easier to create.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Writing &lt;a href="harshul1610.github.io/pages/about-me.html#about-me"&gt;about me&lt;/a&gt; page&lt;/strong&gt;:
 For this at first put &lt;code&gt;DISPLAY_PAGES_ON_MENU=True&lt;/code&gt; in &lt;code&gt;pelicanconf.py&lt;/code&gt; file. This is the file where you will get all settings
 related to website being configured. when we run make html it is this file variables that are picked up by system. Do not
 be in hurry to view the about me page in web site, because we still have not created it. we have just enabled the settings.
-To create 'aboutme.html' using &lt;code&gt;make html&lt;/code&gt; you have to write your aboutme.md or aboutme.rst file and put it under pages directory
+To create 'aboutme.html' using &lt;code&gt;make html&lt;/code&gt; you have to write your aboutme.md or &lt;code&gt;aboutme.rst&lt;/code&gt; file and put it under pages directory
 in content directory. now run &lt;code&gt;make html&lt;/code&gt; and &lt;code&gt;make serve&lt;/code&gt; and view the updated page.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Social Buttons&lt;/strong&gt;: You can definitely add them just by putting &lt;code&gt;SOCIAL = (('facebook', 'https://www.facebook.com/harshul.jain.7'),)&lt;/code&gt;
+&lt;p&gt;&lt;strong&gt;Social Buttons&lt;/strong&gt;: You can definitely add them just by putting &lt;code&gt;SOCIAL = (('facebook', url ),)&lt;/code&gt;
  in &lt;code&gt;pelicanconf.py&lt;/code&gt;. For more social configurations, you have to check about that theme. Best way to get the info of that
  theme is github. Some themes don't have social media handling in them. But Flex does and that is why it is amazing.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</summary><category term="Python"></category><category term="Blog"></category><category term="rst"></category><category term="Pelican"></category></entry></feed>
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Adding syntax highlighting&lt;/strong&gt;: For implementing the syntax highlighting in your blog, you just have to write your code
+snippet between two ``. Remember default pygment used is github, you can always change that. It depends
+on the theme you are using.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I hope this gives you the quick start good enough to create your own blog and host it via github pages.&lt;/p&gt;</summary><category term="Python"></category><category term="Blog"></category><category term="rst"></category><category term="Pelican"></category></entry></feed>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Harshul Jain" />
+<meta name="description" content="My name is Harshul Jain, and I am the part of this Open source world. It is the world, where good and bad practices for creating the softwares are followed. I look on both the ways, but prefer to use the most preferrable way of developing software. Development of Github ..." />
+<meta name="keywords" content="Git, Blog, Pelican">
+<meta property="og:site_name" content="Harshul Jain"/>
+<meta property="og:title" content="Working with git"/>
+<meta property="og:description" content="My name is Harshul Jain, and I am the part of this Open source world. It is the world, where good and bad practices for creating the softwares are followed. I look on both the ways, but prefer to use the most preferrable way of developing software. Development of Github ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/working-with-git.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-02-27 19:32:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/harshul-jain.html">
+<meta property="article:section" content="Pelican"/>
+<meta property="article:tag" content="Git"/>
+<meta property="article:tag" content="Blog"/>
+<meta property="article:tag" content="Pelican"/>
+<meta property="og:image" content="">
+  <title>Harshul Jain &ndash; Working with git</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Harshul Jain" title="Harshul Jain">
+      </a>
+      <h1><a href="">Harshul Jain</a></h1>
+<p>Software Developer | Hardware Hacker</p>      <nav>
+        <ul class="list">
+          <li><a href="/pages/about-me.html#about-me">About me</a></li>
+          <li><a href="/pages/contact-me.html#contact-me">Contact me</a></li>
+
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-facebook" href="https://www.facebook.com/harshul.jain.7" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/harshul1610" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-google" href="https://plus.google.com/u/0/111412901938755370336/" target="_blank"><i class="fa fa-google"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/harshulrobo" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-envelope-o" href="harshulrobo@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="working-with-git">Working with git</h1>
+    <p>Posted on Mon 27 February 2017 in <a href="/category/pelican.html">Pelican</a></p>
+  </header>
+  <div>
+    <p>My name is Harshul Jain, and I am the part of this Open source world. It is the world, where good and bad practices for creating the softwares are followed. I look on both the ways, but prefer to use the most preferrable way of developing software.</p>
+<p>Development of Github platform was started on around 1 October 2007 and the site was launched in April 2008. This
+site is known for holding the repositories of world's greates projects. Some of these projects are Cpython, Pandas, Spark etc. I am a contributor to some of these, and a FOSS enthusiast as well. During my early stages, I used to face the issue with ecosystem of git. I was not able to recognize the exact flow of commands. So I thought of documenting a Process that may help any one.</p>
+<p><strong> Fork the Repository </strong>
+First thing that we should do when starting to work for any project is, Fork a project. We will call the repository as forked repository. Repository from which fork is created is called as upstream repository for me.
+Forking is done via Github and pretty easy for any developer. developer just needs to visit the upstream repository github url and press fork button.</p>
+<p><strong> Clone your forked repo and make remote connections</strong>
+Once you have forked repository on github with you, you will need to clone that repository to your local machine.
+We are doing this because all the development stuff will be done on local machine. So for cloning the repository
+do the folowing from your terminal:</p>
+<div class="highlight"><pre><span></span>git clone &lt;github forked repository url&gt;
+git remote add ups &lt;github upstream repository url&gt;
+git remote add home &lt;github forked repository url&gt;
+</pre></div>
+
+
+<p><strong> Follow the build process </strong>
+By now you should have the project repository on your local machine. So you should build the project as per the project guidelines. For this you should follow the README.md present in project repository. It will walk you through the right way of building the project.</p>
+<p>Always try to understand the build process clearly, as it is one of the key process of development. Without the proper builds, your changes are not valid.</p>
+<p><strong> Create a feature branch </strong>
+Once you have completed the above three steps, you are ready to be a contributor to the project. Let us suppose, while iterating through bug list, you found an issue that you can improvise or solve, you must follow the below proceedure:</p>
+<p>Be inside the updated master branch | Make and checkout a feature branch</p>
+<div class="highlight"><pre><span></span>git checkout -b feature_branch_xyz
+</pre></div>
+
+
+<p><strong> Changes and Commits </strong>
+Now say, you woked on some code refactoring, and you are able to solve the issue. you will need to save your work and push the changes to your forked repository at first.</p>
+<p>local repository --&gt; Forked Repository</p>
+<p>For this follow the following proceedure:</p>
+<div class="highlight"><pre><span></span>git add &lt;file1&gt;
+git commit -m &quot;&lt;commit message&gt;&quot;
+git pull --rebase ups master
+</pre></div>
+
+
+<p>git pull --rebase command, fetches the updated changes made by other people and apply your commits on top of 
+other previous commits. This command does not create any merge commits, and thus makes a clean linear history. This is the magical command of git.</p>
+<p><strong> Push your changes </strong>
+Push your commits to the forked repository but in a sepparate branch.</p>
+<div class="highlight"><pre><span></span>git push -f home feature_branch_xyz
+</pre></div>
+
+
+<p>This way you will be able to work on different issues simultaneously in separate branches.</p>
+<p><strong> Make a Pull request | When Merged | update the master </strong>
+by now, your forked repository on github has updated code that can solve an issue. And all of this is present in separate feature branch. Now you will raise a pull request using github to Master branch of upstream repository.</p>
+<p>i.e.,
+Forked feature branch --&gt; Master branch</p>
+<p><strong> Changes are accepted </strong></p>
+<p>If the chanages are accepted and merged into your master, you will update the master in your local repository on your local machine.</p>
+<p>For this do the following:</p>
+<div class="highlight"><pre><span></span>git checkout master
+git pull --rebase ups master
+git push home master
+</pre></div>
+
+
+<p><strong> Changes are rejected </strong></p>
+<p>If changes are rejected, you will work on more changes as per suggestions and code review and do the following:</p>
+<div class="highlight"><pre><span></span>git add &lt;file1&gt;
+git commit -m &quot;&lt;commit message&gt;&quot;
+git pull --rebase ups master
+git push -f home feature_branch_xyz
+</pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/git.html">Git</a>
+      <a href="/tag/blog.html">Blog</a>
+      <a href="/tag/pelican.html">Pelican</a>
+    </p>
+  </div>
+  <br>
+  <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_hacker_news"></a>
+    <a class="a2a_button_reddit"></a>
+    <a class="a2a_button_telegram"></a>
+    <a class="a2a_button_whatsapp"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'blog-harshuljain';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
+
+    <footer>
+        <p>&copy; Harshul Jain </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Harshul Jain ",
+  "url" : "",
+  "image": "",
+  "description": "Connecting the world with Python."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Working with git",
+  "headline": "Working with git",
+  "datePublished": "2017-02-27 19:32:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Harshul Jain",
+    "url": "/author/harshul-jain.html"
+  },
+  "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
+  "url": "/working-with-git.html",
+  "description": "My name is Harshul Jain, and I am the part of this Open source world. It is the world, where good and bad practices for creating the softwares are followed. I look on both the ways, but prefer to use the most preferrable way of developing software. Development of Github ..."
+}
+</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- AddToAny BEGIN -->
+
+
+</body>
+</html>

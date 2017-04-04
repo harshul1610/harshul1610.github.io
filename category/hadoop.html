@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content=""/>
 
-  <title>Harshul Jain &ndash; Authors</title>
+  <title>Harshul Jain &ndash; Category: Hadoop</title>
 </head>
 <body>
   <aside>
@@ -57,14 +57,39 @@
 
 <article>
   <header>
-    <h1>Authors</h1>
+    <h2><a href="/setting-up-hadoop.html#setting-up-hadoop">Setting up hadoop</a></h2>
+    <p>
+      Posted on Sun 02 April 2017 in <a href="/category/hadoop.html">Hadoop</a>
+      &#8226; Tagged with
+      <a href="/tag/hadoop.html">Hadoop</a>,      <a href="/tag/blog.html">Blog</a>,      <a href="/tag/environment-setup.html">Environment setup</a>      &#8226; <a href="/setting-up-hadoop.html#disqus_thread">Leave a comment</a>
+    </p>
   </header>
   <div>
-    <ul class="list">
-      <li><a href="/author/harshul-jain.html">Harshul Jain</a> (3)</li>
-    </ul>
+      <p><strong><em>Install Java</em></strong></p>
+<p><strong><em>Adding a dedicated hadoop system user</em></strong></p>
+<div class="highlight"><pre><span></span>$ sudo addgroup hadoop
+$ sudo adduser --ingroup hadoop hduser
+</pre></div>
+
+
+<p><strong><em>configuring ssh</em></strong></p>
+<div class="highlight"><pre><span></span><span class="x">su hduser</span>
+<span class="x">ssh-keygen -t rsa</span>
+<span class="x">cat </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.ssh/id_rsa.pub &gt;&gt; </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.ssh/authorized_keys</span>
+</pre></div>
+
+
+<p><strong><em>Installing hadoop</em></strong></p>
+<div class="highlight"><pre><span></span>su hduser
+cd /usr/local
+sudo tar xzf hadoop-x.x.x.tar.gz
+sudo mv hadoop-x.x ...</pre></div>
+      <a class="btn" href="/setting-up-hadoop.html#setting-up-hadoop">Continue reading</a>
   </div>
 </article>
+
+  <div class="pagination">
+  </div>
 
     <footer>
         <p>&copy; Harshul Jain </p>
@@ -84,6 +109,15 @@
   "image": "",
   "description": "Connecting the world with Python."
 }
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'blog-harshuljain';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
 </script>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

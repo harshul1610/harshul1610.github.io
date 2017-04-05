@@ -20,11 +20,11 @@
 
 
 <meta name="author" content="Harshul Jain" />
-<meta name="description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop su hduser cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x ..." />
+<meta name="description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x ..." />
 <meta name="keywords" content="Hadoop, Blog, Environment setup">
 <meta property="og:site_name" content="Harshul Jain"/>
 <meta property="og:title" content="Setting up hadoop"/>
-<meta property="og:description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop su hduser cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x ..."/>
+<meta property="og:description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="/setting-up-hadoop.html"/>
 <meta property="og:type" content="article"/>
@@ -84,7 +84,7 @@ $ sudo adduser --ingroup hadoop hduser
 
 
 <p><strong><em>Installing hadoop</em></strong></p>
-<div class="highlight"><pre><span></span>su hduser
+<div class="highlight"><pre><span></span>exit
 cd /usr/local
 sudo tar xzf hadoop-x.x.x.tar.gz
 sudo mv hadoop-x.x.x hadoop
@@ -100,7 +100,7 @@ nano .bashrc
 
 
 <p>put the followign contents in the .bashrc file</p>
-<div class="highlight"><pre><span></span><span class="cp">#</span><span class="nf">HADOOP</span><span class="x"> VARIABLES START</span>
+<div class="highlight"><pre><span></span><span class="err">#</span><span class="x"> HADOOP VARIABLES START</span>
 <span class="x">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span>
 <span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">JAVA_HOME</span><span class="x">/bin</span>
 <span class="x">export HADOOP_HOME=/usr/local/hadoop</span>
@@ -115,8 +115,8 @@ nano .bashrc
 <span class="x">export HADOOP_HDFS_HOME=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x"></span>
 <span class="x">export YARN_HOME=</span><span class="p">$</span><span class="nv">HADOOP_INSTALL</span><span class="x"></span>
 <span class="x">export HADOOP_COMMON_LIB_NATIVE_DIR=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x">/lib/native</span>
-<span class="cp">#</span><span class="nf">export</span><span class="x"> HADOOP_OPTS=&quot;-Djava.library.path=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x">/lib&quot;</span>
-<span class="cp">#</span><span class="nf">HADOOP</span><span class="x"> VARIABLES END</span>
+<span class="err">#</span><span class="x"> export HADOOP_OPTS=&quot;-Djava.library.path=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x">/lib&quot;</span>
+<span class="err">#</span><span class="x"> HADOOP VARIABLES END</span>
 </pre></div>
 
 
@@ -126,20 +126,20 @@ hadoop version
 
 
 <p><strong><em>hadoop-env.sh</em></strong></p>
-<div class="highlight"><pre><span></span>su hduser
-cd
-sudo nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+<div class="highlight"><pre><span></span>cd
+nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh
 </pre></div>
 
 
 <p>comment the original JAVA_HOME line and replace it by <code>export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</code>.</p>
 <p><strong><em>core-site.xml</em></strong></p>
-<div class="highlight"><pre><span></span>su hduser
+<div class="highlight"><pre><span></span>exit
 sudo mkdir -p /app/hadoop/tmp
 sudo chown hduser:hadoop /app/hadoop/tmp
 sudo chmod 750 /app/hadoop/tmp
+su hduser
 cd
-sudo nano /usr/local/hadoop/etc/hadoop/core-site.xml
+nano /usr/local/hadoop/etc/hadoop/core-site.xml
 </pre></div>
 
 
@@ -163,8 +163,7 @@ sudo nano /usr/local/hadoop/etc/hadoop/core-site.xml
 
 
 <p><strong><em>mapred-site.xml</em></strong></p>
-<div class="highlight"><pre><span></span>su hduser
-sudo nano /usr/local/hadoop/etc/hadoop/mapred-site.xml
+<div class="highlight"><pre><span></span>nano /usr/local/hadoop/etc/hadoop/mapred-site.xml
 </pre></div>
 
 
@@ -181,8 +180,7 @@ sudo nano /usr/local/hadoop/etc/hadoop/mapred-site.xml
 
 
 <p><strong><em>hdfs-site.xml</em></strong></p>
-<div class="highlight"><pre><span></span>su hduser
-sudo nano /usr/local/hadoop/etc/hadoop/mapred-site.xml
+<div class="highlight"><pre><span></span>nano /usr/local/hadoop/etc/hadoop/mapred-site.xml
 </pre></div>
 
 
@@ -199,13 +197,13 @@ sudo nano /usr/local/hadoop/etc/hadoop/mapred-site.xml
 
 
 <p><strong><em>Formatting the hdfs file system</em></strong></p>
-<div class="highlight"><pre><span></span>/usr/local/hadoop/bin/hadoop namenode -format
+<div class="highlight"><pre><span></span>hadoop namenode -format
 </pre></div>
 
 
 <p><strong><em>Starting and stopping your single node cluster</em></strong></p>
-<div class="highlight"><pre><span></span>/usr/local/hadoop/sbin/start-all.sh
-/usr/local/hadoop/bin/stop-all.sh
+<div class="highlight"><pre><span></span>start-all.sh
+stop-all.sh
 </pre></div>
   </div>
   <div class="tag-cloud">
@@ -273,7 +271,7 @@ sudo nano /usr/local/hadoop/etc/hadoop/mapred-site.xml
   },
   "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
   "url": "/setting-up-hadoop.html",
-  "description": "Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop su hduser cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x ..."
+  "description": "Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x ..."
 }
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

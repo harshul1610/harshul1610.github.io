@@ -20,11 +20,11 @@
 
 
 <meta name="author" content="Harshul Jain" />
-<meta name="description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x ..." />
+<meta name="description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x …" />
 <meta name="keywords" content="Hadoop, Blog, Environment setup">
 <meta property="og:site_name" content="Harshul Jain"/>
 <meta property="og:title" content="Setting up hadoop in Ubuntu"/>
-<meta property="og:description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x ..."/>
+<meta property="og:description" content="Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://harshul1610.github.io/setting-up-hadoop-in-ubuntu.html"/>
 <meta property="og:type" content="article"/>
@@ -75,9 +75,9 @@ $ sudo adduser --ingroup hadoop hduser
 
 
 <p><strong><em>configuring ssh</em></strong></p>
-<div class="highlight"><pre><span></span><span class="x">su hduser</span>
-<span class="x">ssh-keygen -t rsa</span>
-<span class="x">cat </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.ssh/id_rsa.pub &gt;&gt; </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.ssh/authorized_keys</span>
+<div class="highlight"><pre><span></span>su hduser
+ssh-keygen -t rsa
+cat $HOME/.ssh/id_rsa.pub &gt;&gt; $HOME/.ssh/authorized_keys
 </pre></div>
 
 
@@ -98,23 +98,23 @@ nano .bashrc
 
 
 <p>put the followign contents in the .bashrc file</p>
-<div class="highlight"><pre><span></span><span class="err">#</span><span class="x"> HADOOP VARIABLES START</span>
-<span class="x">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span>
-<span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">JAVA_HOME</span><span class="x">/bin</span>
-<span class="x">export HADOOP_HOME=/usr/local/hadoop</span>
-<span class="x">unalias fs &amp;&gt; /dev/null</span>
-<span class="x">alias fs=&quot;hadoop fs&quot;</span>
-<span class="x">unalias hls &amp;&gt; /dev/null</span>
-<span class="x">alias hls=&quot;fs -ls&quot;</span>
-<span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x">/bin</span>
-<span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x">/sbin</span>
-<span class="x">export HADOOP_MAPRED_HOME=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x"></span>
-<span class="x">export HADOOP_COMMON_HOME=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x"></span>
-<span class="x">export HADOOP_HDFS_HOME=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x"></span>
-<span class="x">export YARN_HOME=</span><span class="p">$</span><span class="nv">HADOOP_INSTALL</span><span class="x"></span>
-<span class="x">export HADOOP_COMMON_LIB_NATIVE_DIR=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x">/lib/native</span>
-<span class="err">#</span><span class="x"> export HADOOP_OPTS=&quot;-Djava.library.path=</span><span class="p">$</span><span class="nv">HADOOP_HOME</span><span class="x">/lib&quot;</span>
-<span class="err">#</span><span class="x"> HADOOP VARIABLES END</span>
+<div class="highlight"><pre><span></span># HADOOP VARIABLES START
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+export HADOOP_HOME=/usr/local/hadoop
+unalias fs &amp;&gt; /dev/null
+alias fs=&quot;hadoop fs&quot;
+unalias hls &amp;&gt; /dev/null
+alias hls=&quot;fs -ls&quot;
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+# export HADOOP_OPTS=&quot;-Djava.library.path=$HADOOP_HOME/lib&quot;
+# HADOOP VARIABLES END
 </pre></div>
 
 
@@ -269,7 +269,7 @@ stop-all.sh
   },
   "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
   "url": "https://harshul1610.github.io/setting-up-hadoop-in-ubuntu.html",
-  "description": "Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x ..."
+  "description": "Install Java Adding a dedicated hadoop system user $ sudo addgroup hadoop $ sudo adduser --ingroup hadoop hduser configuring ssh su hduser ssh-keygen -t rsa cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys Installing hadoop exit cd /usr/local sudo tar xzf hadoop-x.x.x.tar.gz sudo mv hadoop-x.x.x …"
 }
 </script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
